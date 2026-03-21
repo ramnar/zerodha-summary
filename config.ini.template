@@ -1,17 +1,36 @@
 [settings]
-base_url    = https://kite.zerodha.com/
-pages       = https://console.zerodha.com/reports/tradebook
-              https://console.zerodha.com/account/demat
-              https://console.zerodha.com/portfolio/corporate-action-order-window
-              https://coin.zerodha.com/dashboard
 
-email       = recipient@example.com
-sender      = yourname@gmail.com
-password    = your-gmail-app-password
-smtp_host   = smtp.gmail.com
-smtp_port   = 587
-no_tls      = false
-subject     = Zerodha Portfolio Summary
-body        = Please find the Zerodha screenshots attached as a PDF.
-output_pdf  = zerodha_summary.pdf
-width       = 1280
+# URL of the login page — the browser will open here first
+base_url = https://kite.zerodha.com/
+
+# Pages to screenshot, one URL per line (indented).
+# The tradebook URL is handled specially: all segments and pagination are captured automatically.
+pages = https://console.zerodha.com/reports/tradebook
+        https://console.zerodha.com/account/demat
+        https://console.zerodha.com/portfolio/corporate-action-order-window
+        https://coin.zerodha.com/dashboard
+
+# Email recipient
+receiver_email = recipient@example.com
+
+# Gmail address used to send the email (must match the App Password below)
+sender_email = yourname@gmail.com
+
+# Gmail App Password (Google Account → Security → 2-Step Verification → App passwords)
+# Leave blank to be prompted securely at runtime
+password = your-gmail-app-password
+
+# SMTP settings — defaults work for Gmail
+smtp_host = smtp.gmail.com
+smtp_port = 587
+no_tls    = false
+
+# Email content
+subject = Zerodha Portfolio Summary
+body    = Please find the Zerodha portfolio summary attached.
+
+# Output PDF filename
+output_pdf = zerodha_summary.pdf
+
+# Browser viewport width in pixels (increase for wider tables)
+width = 1280
