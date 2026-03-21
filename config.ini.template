@@ -1,0 +1,17 @@
+[settings]
+base_url    = https://kite.zerodha.com/
+pages       = https://console.zerodha.com/reports/tradebook
+              https://console.zerodha.com/account/demat
+              https://console.zerodha.com/portfolio/corporate-action-order-window
+              https://coin.zerodha.com/dashboard
+
+email       = recipient@example.com
+sender      = yourname@gmail.com
+password    = your-gmail-app-password
+smtp_host   = smtp.gmail.com
+smtp_port   = 587
+no_tls      = false
+subject     = Zerodha Portfolio Summary
+body        = Please find the Zerodha screenshots attached as a PDF.
+output_pdf  = zerodha_summary.pdf
+width       = 1280

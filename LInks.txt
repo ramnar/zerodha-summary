@@ -1,0 +1,9 @@
+
+
+console.zerodha.com/reports/tradebook - all dropdowns
+https://console.zerodha.com/account/demat
+https://console.zerodha.com/portfolio/corporate-action-order-window
+coin.zerodha.com/dashboard
+
+console.zerodha.com/dashboard/order history
+console.zerodha.com/portfolio/ipo
