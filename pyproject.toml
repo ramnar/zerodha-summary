@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "zerodha-summary"
-version = "0.1.0"
+version = "0.2.0"
 description = "Screenshot Zerodha portfolio pages, compile to PDF, and email it"
 readme = "README.md"
 requires-python = ">=3.10"

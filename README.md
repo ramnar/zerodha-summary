@@ -1,4 +1,4 @@
-# Zerodha Portfolio Summary Mailer
+# Zerodha Portfolio Summary
 
 Logs into Zerodha, screenshots your portfolio pages, compiles them into a PDF, and emails it to you.
 
@@ -7,14 +7,14 @@ Logs into Zerodha, screenshots your portfolio pages, compiles them into a PDF, a
 **1. Install**
 
 ```bash
-pip install .
+pip install zerodha-summary
 playwright install chromium
 ```
 
 **2. Configure**
 
 ```bash
-cp config.ini.template config.ini
+curl -o config.ini https://raw.githubusercontent.com/ramnar/zerodha-summary/main/config.ini.template
 ```
 
 Edit `config.ini` with your email addresses and Gmail App Password. See the template for all options.
@@ -58,6 +58,42 @@ zerodha-summary --config my_other_config.ini
 - Add one URL per line under `pages =` in `config.ini`
 - The **Tradebook** page (`/reports/tradebook`) is handled specially — the program automatically iterates all segments (Equity, F&O, Currency, etc.) over the last 3 months and captures every pagination page
 - All other pages are screenshotted as-is
+
+---
+
+## Publishing to PyPI
+
+**1. Install build tools**
+
+```bash
+pip install build twine
+```
+
+**2. Build the distribution**
+
+```bash
+python3 -m build
+```
+
+This creates `dist/zerodha_summary-<version>-py3-none-any.whl` and `dist/zerodha_summary-<version>.tar.gz`.
+
+**3. Upload to PyPI**
+
+```bash
+twine upload dist/*
+```
+
+You will be prompted for your PyPI username and password (or use an API token as the password with `__token__` as the username).
+
+To upload to TestPyPI first:
+
+```bash
+twine upload --repository testpypi dist/*
+```
+
+**4. Bump the version**
+
+Update the `version` field in [pyproject.toml](pyproject.toml) before each release, then rebuild.
 
 ---
 
